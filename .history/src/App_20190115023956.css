@@ -1,24 +1,6 @@
 .App {
   text-align: center;
 }
-.container_main {
-  padding: 20px;
-  border: solid 2px gainsboro;
-  border-top: solid 5px green;
-  border-bottom: 0;
-  padding-bottom: 0;
-}
-.top_heading {
-  color: gray;
-  margin-bottom: 16px;
-}
-.team_icon {
-  float: right;
-  font-size: 10px;
-}
-.fa-users {
-  margin-left: 5px;
-}
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -57,7 +39,7 @@
 }
 
 body {
-  font-family: "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .select-search-box {

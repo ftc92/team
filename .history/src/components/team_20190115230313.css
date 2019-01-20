@@ -1,63 +1,42 @@
-.App {
+.photo {
+  border-radius: 53px;
+  height: 100%;
+}
+.photo_cnt {
+  border-radius: 53px;
+  height: 42px;
   text-align: center;
 }
-.container_main {
-  padding: 20px;
-  border: solid 2px gainsboro;
-  border-top: solid 5px green;
-  border-bottom: 0;
-  padding-bottom: 0;
+.details {
+  margin-left: 10px;
+  height: 42px;
 }
-.top_heading {
-  color: gray;
-  margin-bottom: 16px;
-}
-.team_icon {
-  float: right;
-  font-size: 10px;
-}
-.fa-users {
-  margin-left: 5px;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.roww {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.del_usr {
+  color: orangered;
+  display: none;
+  height: 42px;
+  width: 42px;
+  padding: 11px;
 }
-.outer {
-  margin: 30px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.del_usr:hover {
+  border-radius: 53px;
+  border: solid 1px;
 }
 
-[class*="fontawesome-"]:before {
-  font-family: "fontawesome", sans-serif;
+.roww:hover .del_usr {
+  display: block;
 }
 
-body {
-  font-family: "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
+.roww:hover .photo {
+  display: none;
+}
+.roww:hover {
+  background: aliceblue;
 }
 
 .select-search-box {

@@ -1,71 +1,101 @@
-.App {
+.kanban {
+  display: flex;
+  width: 50%;
+  padding-left: 10px !important;
+  padding-right: 0px !important;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+._outer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.photo {
+  border-radius: 50%;
+  height: 100%;
+}
+.photo_cnt {
+  height: 40px;
   text-align: center;
 }
-.container_main {
-  padding: 20px;
+.details {
+  margin-left: 10px;
+  height: 40px;
+}
+
+.add_card {
+  color: lightseagreen;
+}
+
+.del_usr {
+  color: orangered;
+  display: none;
+  height: 40px;
+  width: 40px;
+  padding: 11px;
+}
+.del_usr:hover {
+  border-radius: 50%;
+  border: solid 1px;
+}
+
+.profile:hover .del_usr {
+  display: block;
+}
+.add_icon {
+  background: aliceblue;
+
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  padding: 13px;
+}
+
+.profile:hover .photo {
+  display: none;
+}
+.profile:hover,
+.add_card:hover {
+  background: aliceblue;
+}
+
+.add_card:hover .add_icon {
+  background: white;
+}
+.show_all {
+  text-align: center;
+  padding: 10px;
   border: solid 2px gainsboro;
-  border-top: solid 5px green;
-  border-bottom: 0;
-  padding-bottom: 0;
+  border-top: 0;
 }
-.top_heading {
-  color: gray;
-  margin-bottom: 16px;
+.show_all:hover {
+  background: aliceblue;
 }
-.team_icon {
-  float: right;
-  font-size: 10px;
-}
-.fa-users {
-  margin-left: 5px;
-}
-
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-.outer {
-  margin: 30px;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-[class*="fontawesome-"]:before {
-  font-family: "fontawesome", sans-serif;
-}
-
-body {
-  font-family: "Droid Sans","Helvetica Neue", Helvetica, Arial, sans-serif;
-}
-
 .select-search-box {
-  width: 300px;
+  width: 50%;
   position: relative;
   margin-bottom: 20px;
   background: #fff;
   border-radius: 4px;
+}
+
+@media screen and (max-width: 768px) {
+  .select-search-box {
+    width: 100%;
+  }
+  .kanban {
+    width: 100%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+  .team_icon_text {
+    display: none;
+  }
+}
+
+.select-search-box__options {
+  padding: 0;
 }
 
 .select-search-box--multiple {
@@ -103,12 +133,12 @@ body {
 .select-search-box__search {
   display: block;
   width: 100%;
-  height: 50px;
+  /*height: 50px;*/
   border: none;
   background: none;
   outline: none;
   font-size: 16px;
-  padding: 0 20px;
+  padding: 16px 10px;
   color: #222f3e;
   -webkit-appearance: none;
   box-sizing: border-box;
@@ -174,7 +204,7 @@ input[type="search"]::-webkit-search-decoration {
 .select-search-box__select {
   display: none;
   position: absolute;
-  top: 60px;
+  top: 66px;
   left: 0;
   right: 0;
   background: #fff;
@@ -202,7 +232,7 @@ input[type="search"]::-webkit-search-decoration {
   font-size: 16px;
   font-weight: 400;
   color: #616b74;
-  padding: 15px 20px;
+  padding: 8px 10px;
   border-top: 1px solid #eee;
   cursor: pointer;
   white-space: nowrap;

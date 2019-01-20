@@ -1,0 +1,38 @@
+.photo {
+  border-radius: 53px;
+  height: 100%;
+}
+.photo_cnt {
+  border-radius: 53px;
+  height: 42px;
+  text-align: center;
+}
+.details {
+  margin-left: 10px;
+  height: 42px;
+}
+.roww {
+  border: solid 1px;
+  display: flex;
+  padding: 20px;
+}
+
+.del_usr {
+  color: yellow;
+  display: none;
+  height: 42px;
+  width: 42px;
+}
+.del_usr:hover {
+  border-radius: 53px;
+  border-radius: 53px;
+}
+
+.roww:hover .del_usr {
+  display: block;
+  border: solid 1px;
+}
+
+.roww:hover .photo {
+  display: none;
+}
