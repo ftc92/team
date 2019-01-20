@@ -1,0 +1,11 @@
+.photo {
+  border-radius: 53px;
+}
+.details {
+  margin: 10px;
+}
+.roww {
+  border: solid 1px;
+  display: flex;
+  padding: 20px;
+}
