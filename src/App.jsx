@@ -8,14 +8,14 @@ import SelectSearch from "react-select-search";
 class App extends Component {
   state = {
     users: data,
-    members: data.slice(0,6),
+    members: [],
     showAll: false,
     max: 5
   };
 
   handleClick = id => {
-    let curr = this.state.users.filter(u => u.id == id);
-    let members = [...this.state.members, ...curr];
+    let currentUser = this.state.users.filter(u => u.id == id);
+    let members = [...this.state.members, ...currentUser];
     this.setState({ members });
   };
 
@@ -33,16 +33,15 @@ class App extends Component {
     let difference = this.state.users.filter(
       x => !this.state.members.includes(x)
     );
-    let usrs = difference.map(u => {
+    let users = difference.map(u => {
       return { name: u.username, value: u.id, photo: u.picture };
     });
-    let to_show = this.state.members.slice(0, this.state.max);
+    let members = this.state.members.slice(0, this.state.max);
 
     if (this.state.showAll) {
-      to_show = this.state.members;
+      members = this.state.members;
     }
 
-    console.log(usrs.slice(0, 43));
     return (
       <div>
         <div className="container_main ">
@@ -55,8 +54,8 @@ class App extends Component {
           </b>
 
           <Team
-            members={to_show}
-            users={usrs}
+            members={members}
+            users={users}
             onAdd={this.handleClick}
             onDelete={this.handleDelete}
           />

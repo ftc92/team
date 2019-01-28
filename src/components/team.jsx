@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./team.css";
 import SelectSearch from "react-select-search";
+import Member from "./member";
 
 class Team extends Component {
   state = { showList: false };
@@ -30,6 +31,7 @@ class Team extends Component {
         </span>
       );
     }
+	
 
     return (
       <div>
@@ -61,23 +63,8 @@ class Team extends Component {
           )}
 
           {this.props.members.map(m => (
-            <div className="kanban profile" key={m.id}>
-              <div className="photo_cnt">
-                <img className="photo" alt="img" src={m.picture} />
-                <i
-                  className="fa fa-times del_usr"
-				  title="Remove user"
-                  aria-hidden="true"
-                  onClick={() => {
-                    this.props.onDelete(m.id);
-                  }} 
-                />
-              </div>
-              <div className="details">
-                <div>{m.role}</div>
-                <b>{m.username}</b>
-              </div>
-            </div>
+		  <Member member={m} onDelete={this.props.onDelete}></Member>
+            
           ))}
         </div>
       </div>
