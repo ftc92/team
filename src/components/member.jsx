@@ -1,32 +1,28 @@
 import React, { Component } from "react";
 import RemoveButton from "./removeButton"
+import hoverable from "./hover_hoc"
 
 class Member extends Component {
-	state={isHovered:false}
 
-isHovered = () => {
-    this.setState({ isHovered: true });
-  };
-  
-  mouseLeft = () => {
-    this.setState({ isHovered: false });
-  };
 
 
   render() {
 	  
 	  let {id,picture,role,username} = this.props.member
+	  let {onMouseEnter,onMouseLeave,onDelete,isHovered} = this.props
+	  const RemoveButton_ = hoverable(RemoveButton)
 
- 
+
+
     return (
  
 		  
-            <div className="kanban profile" style={this.state.isHovered?{background:"aliceblue"}:{}} onMouseEnter={this.isHovered} onMouseLeave={this.mouseLeft} key={id}>
+            <div className="kanban profile" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave} style={isHovered?{background:"aliceblue"}:{}}  key={id}>
               <div className="photo_cnt"> 
-			  {!this.state.isHovered? (<img className="photo" alt="img" src={picture} />
+			  {!this.props.isHovered? (<img className="photo" alt="img" src={picture} />
 			  
 			  ):(
-			  <RemoveButton id={id}  onDelete={this.props.onDelete}></RemoveButton>
+			  <RemoveButton_ id={id}   memberHovered={isHovered}  onDelete={onDelete}></RemoveButton_>
 			  )
 			  
 			  }
