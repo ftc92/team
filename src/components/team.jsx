@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import "./team.css";
 import SelectSearch from "react-select-search";
 import Member from "./member";
+import hoverable from "./hover_hoc"
+import AddButton from "./addButton"
 
 class Team extends Component {
   state = { showList: false };
@@ -23,7 +25,6 @@ class Team extends Component {
         verticalAlign: "middle",
         marginRight: 10
       };
-
       return (
         <span>
           <img style={imgStyle} width="40" height="40" src={option.photo} />
@@ -31,6 +32,7 @@ class Team extends Component {
         </span>
       );
     }
+	const Member_ = hoverable(Member)
 	
 
     return (
@@ -54,16 +56,12 @@ class Team extends Component {
               renderOption={renderOption}
             />
           ) : (
-            <div className="kanban  add_card " onClick={() => this.showList()}>
-              <span>
-                <i className="fa fa-plus add_icon" aria-hidden="true" />
-                <b className="details">Add team member to this team</b>
-              </span>
-            </div>
+		  <AddButton onClick={this.showList}></AddButton>
+     
           )}
 
           {this.props.members.map(m => (
-		  <Member member={m} onDelete={this.props.onDelete}></Member>
+		  <Member_ member={m} onDelete={this.props.onDelete}></Member_>
             
           ))}
         </div>
