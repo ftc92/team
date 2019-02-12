@@ -49,7 +49,7 @@ class App extends Component {
             YOUR TEAM FOR THIS TEST
             <span className="team_icon ">
               <span className="team_icon_text ">TEAM PAGE</span>
-              <i class="fa fas fa-lg fa-users" />
+              <i className="fa fas fa-lg fa-users" />
             </span>
           </b>
 

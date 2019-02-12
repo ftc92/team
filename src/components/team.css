@@ -47,14 +47,7 @@
 }
 
 
-.profile:hover,
-.add_card:hover {
-  background: aliceblue;
-}
 
-.add_card:hover .add_icon {
-  background: white;
-}
 .show_all {
   text-align: center;
   padding: 10px;
